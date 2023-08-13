@@ -15,4 +15,4 @@ INSERT INTO first_table (id, name) VALUES (2, "Last name");
 INSERT INTO first_table (id, name) VALUES (3, "name");
 
 -- List all rows of the table first_table from the specified database.
-SELECT * FROM hbtn_test_db_6.first_table;
+SELECT * FROM first_table;
