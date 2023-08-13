@@ -2,8 +2,6 @@
 -- This script deletes and creates a new database named hbtn_test_db_0 without tables,
 -- creates 3 tables within it, and then lists all the tables in the specified database.
 
-
-
 -- Drop the database if it exists.
 DROP DATABASE IF EXISTS hbtn_test_db_0;
 
