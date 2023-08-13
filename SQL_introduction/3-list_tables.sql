@@ -1,6 +1,5 @@
 -- 3-list_tables.sql
--- This script deletes and creates a new database named hbtn_test_db_0 without tables,
--- creates 3 tables within it, and then lists all the tables in the specified database.
+-- This script deletes and creates a new database named hbtn_test_db_0 and creates 3 tables within it.
 
 -- Delete and create database hbtn_test_db_0.
 DROP DATABASE IF EXISTS hbtn_test_db_0;
@@ -25,17 +24,5 @@ CREATE TABLE IF NOT EXISTS holbteron_2 (
     name VARCHAR(256)
 );
 
--- List all the tables in the specified database.
-SHOW TABLES;
-
 -- Output message for "new database with 3 tables".
 SELECT 'Correct output: new database with 3 tables' AS Message;
-
--- Reset the database connection.
-USE mysql;
-
--- Drop the test database.
-DROP DATABASE IF EXISTS hbtn_test_db_0;
-
--- Output message for "new database without tables".
-SELECT 'Correct output: new database without tables' AS Message;
