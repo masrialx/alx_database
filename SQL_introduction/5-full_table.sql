@@ -1,21 +1,17 @@
--- Create database and table
-DROP DATABASE IF EXISTS hbtn_test_db_5;
-CREATE DATABASE IF NOT EXISTS hbtn_test_db_5;
-USE hbtn_test_db_5;
-CREATE TABLE IF NOT EXISTS first_table (
-    id INT NOT NULL AUTO_INCREMENT,
-    name VARCHAR(128),
-    c CHAR(1),
-    created_at DATE,
-    PRIMARY KEY (id)
-);
+-- This script prints the full description of the table first_table from the specified database.
 
--- Print the full description of the table first_table from the specified database.
-SELECT GROUP_CONCAT(COLUMN_NAME, ' ', COLUMN_TYPE, ' ', 
-                   IF(IS_NULLABLE = 'NO', 'NOT NULL', ''), ' ',
-                   IF(COLUMN_DEFAULT IS NOT NULL, 
-                      CONCAT('DEFAULT ', QUOTE(COLUMN_DEFAULT)), ''), ' ',
-                   IF(COLUMN_KEY = 'PRI', 'PRIMARY KEY', ''), ' ',
-                   EXTRA) AS description
-FROM information_schema.columns
-WHERE TABLE_SCHEMA = 'hbtn_test_db_5' AND TABLE_NAME = 'first_table';
+-- Set the database name.
+SET @db_name = 'hbtn_0c_0';
+
+-- Get the table name.
+SET @table_name = 'first_table';
+
+-- Build the query to retrieve the full description.
+SET @query = CONCAT('SELECT COLUMN_NAME, COLUMN_TYPE, IS_NULLABLE, COLUMN_DEFAULT, COLUMN_KEY, EXTRA',
+                    ' FROM information_schema.columns',
+                    ' WHERE TABLE_SCHEMA = \'', @db_name, '\' AND TABLE_NAME = \'', @table_name, '\';');
+
+-- Execute the query.
+PREPARE stmt FROM @query;
+EXECUTE stmt;
+DEALLOCATE PREPARE stmt;
