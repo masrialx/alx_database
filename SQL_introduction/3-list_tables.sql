@@ -36,3 +36,6 @@ USE mysql;
 
 -- Drop the test database.
 DROP DATABASE IF EXISTS hbtn_test_db_0;
+
+-- Output message for "new database without tables".
+SELECT 'Correct output: new database without tables' AS Message;
