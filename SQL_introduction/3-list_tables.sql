@@ -1,7 +1,10 @@
 -- 4-create_tables.sql
--- This script creates a new database hbtn_test_db_0 and three tables within it.
+-- This script deletes and creates the hbtn_test_db_0 database and creates 3 tables.
 
--- Create the database if it doesn't exist.
+-- Delete the database if it exists.
+DROP DATABASE IF EXISTS hbtn_test_db_0;
+
+-- Create the database.
 CREATE DATABASE IF NOT EXISTS hbtn_test_db_0;
 
 -- Use the newly created database.
