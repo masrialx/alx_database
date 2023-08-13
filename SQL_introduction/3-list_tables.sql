@@ -1,23 +1,31 @@
 -- 3-list_tables.sql
--- This script lists all the tables of a specified database in your MySQL server.
+-- This script creates a new database named hbtn_test_db_0, creates 3 tables within it,
+-- and then lists all the tables in the specified database.
 
--- Use the specified database.
-USE your_database_name;
+-- Drop the database if it exists.
+DROP DATABASE IF EXISTS hbtn_test_db_0;
 
--- Create a temporary table to hold the list of table names.
-CREATE TEMPORARY TABLE IF NOT EXISTS temp_table_list (
-    table_name VARCHAR(256)
+-- Create the database.
+CREATE DATABASE IF NOT EXISTS hbtn_test_db_0;
+
+-- Use the newly created database.
+USE hbtn_test_db_0;
+
+-- Create the first table.
+CREATE TABLE IF NOT EXISTS holbteron_0 (
+    id INT
 );
 
--- Insert the list of table names into the temporary table.
-INSERT INTO temp_table_list
-    SELECT table_name
-    FROM information_schema.tables
-    WHERE table_schema = 'your_database_name';
+-- Create the second table.
+CREATE TABLE IF NOT EXISTS holbteron_1 (
+    name VARCHAR(256)
+);
 
--- Display the list of table names.
-SELECT table_name
-FROM temp_table_list;
+-- Create the third table.
+CREATE TABLE IF NOT EXISTS holbteron_2 (
+    id INT,
+    name VARCHAR(256)
+);
 
--- Drop the temporary table.
-DROP TEMPORARY TABLE IF EXISTS temp_table_list;
+-- List all the tables in the specified database.
+SHOW TABLES;
