@@ -68,7 +68,7 @@ Structured Query Language (SQL) is a powerful tool used for managing and manipul
 
 SQL is a fundamental skill for working with databases. It allows you to manage data efficiently, retrieve insights, and build applications that rely on organized information. Understanding SQL empowers you to interact with data effectively, perform data analysis, and make informed decisions.
 
-## Learning Resources
+## Learning Resource
 
 If you're new to SQL, there are many online tutorials, courses, and resources available to help you get started. Websites like W3Schools, Codecademy, and Khan Academy offer interactive SQL lessons that cover the basics and advanced topics.
 
