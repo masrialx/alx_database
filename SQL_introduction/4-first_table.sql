@@ -14,5 +14,19 @@ CREATE TABLE IF NOT EXISTS first_table (
 INSERT INTO first_table (id, name) VALUES (1, "First name");
 INSERT INTO first_table (id, name) VALUES (2, "Last name");
 
--- Print the count of records in first_table.
-SELECT COUNT(id) FROM first_table;
+-- Print the count of records in first_table using a stored procedure.
+DELIMITER //
+CREATE PROCEDURE CountRecords()
+BEGIN
+    DECLARE recordCount INT;
+    SET recordCount = 0;
+
+    SELECT COUNT(*) INTO recordCount FROM information_schema.tables WHERE table_name = 'first_table';
+
+    SELECT recordCount;
+END;
+//
+DELIMITER ;
+
+-- Call the stored procedure to print the count of records.
+CALL CountRecords();
