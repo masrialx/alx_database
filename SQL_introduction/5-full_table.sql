@@ -1,10 +1,5 @@
 -- Print the full description of the table first_table from the specified database.
-SELECT CONCAT(
-    'first_tableCREATETABLE`first_table`(',
-    '`id`intNOTNULLAUTO_INCREMENT,',
-    '`name`varchar(128)DEFAULTNULL,',
-    '`c`char(1)DEFAULTNULL,',
-    '`created_at`dateDEFAULTNULL,',
-    'PRIMARYKEY(`id`)',
-    ')ENGINE=InnoDBDEFAULTCHARSET=utf8mb4COLLATE=utf8mb4_0900_ai_ci;'
-) AS description;
+SELECT TABLE_NAME AS `Table`, COLUMN_NAME AS `Field`, COLUMN_TYPE AS `Type`, IS_NULLABLE AS `Null`, COLUMN_KEY AS `Key`, COLUMN_DEFAULT AS `Default`, EXTRA AS `Extra` 
+FROM information_schema.COLUMNS 
+WHERE TABLE_SCHEMA = 'hbtn_0c_0' AND TABLE_NAME = 'first_table' 
+ORDER BY ORDINAL_POSITION;
