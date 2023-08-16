@@ -1,5 +1,2 @@
--- Use the hbtn_0c_0 database
-USE hbtn_0c_0;
-
--- Show the CREATE TABLE statement for first_table
-SHOW CREATE TABLE first_table;
+-- Show the CREATE TABLE statement for first_table from hbtn_0c_0 database
+SHOW CREATE TABLE hbtn_0c_0.first_table;
