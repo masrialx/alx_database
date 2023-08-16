@@ -1,7 +1,5 @@
--- Use the information_schema database to retrieve table structure
-USE information_schema;
+-- Use the hbtn_0c_0 database
+USE hbtn_0c_0;
 
--- Select relevant information about columns from the COLUMNS table
-SELECT COLUMN_NAME, DATA_TYPE, CHARACTER_MAXIMUM_LENGTH, IS_NULLABLE
-FROM COLUMNS
-WHERE TABLE_SCHEMA = 'hbtn_0c_0' AND TABLE_NAME = 'first_table';
+-- Show the CREATE TABLE statement for first_table
+SHOW CREATE TABLE first_table;
