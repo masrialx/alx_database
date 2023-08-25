@@ -2,16 +2,18 @@
 USE hbtn_0d_usa;
 
 -- Select the id of the state with name 'California'
-SELECT id
-FROM states
-WHERE name = 'California';
+SET @california_id = (SELECT id FROM states WHERE name = 'California');
 
--- Select the cities in California and order by id
-SELECT id, name
-FROM cities
-WHERE state_id = (
-    SELECT id
-    FROM states
-    WHERE name = 'California'
-)
-ORDER BY id;
+-- Check if there are cities in California
+SET @city_count = (SELECT COUNT(*) FROM cities WHERE state_id = @california_id);
+
+-- If there are cities in California, list them
+IF @city_count > 0 THEN
+    -- Select the cities in California and order by id
+    SELECT id, name
+    FROM cities
+    WHERE state_id = @california_id
+    ORDER BY id;
+ELSE
+    SELECT 'No city in California';
+END IF;
