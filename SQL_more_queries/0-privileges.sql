@@ -1,25 +1,16 @@
-# Script to create MySQL users and list their privileges
+-- 0-privileges.sql
+-- This script creates MySQL users and lists their privileges.
 
-# Create user user_0d_1
-echo "Creating user user_0d_1..."
-echo "CREATE USER 'user_0d_1'@'localhost';" | mysql -hlocalhost -uroot -p
+-- Create user user_0d_1 and grant privileges
+CREATE USER 'user_0d_1'@'localhost';
+GRANT ALL PRIVILEGES ON *.* TO 'user_0d_1'@'localhost';
 
-# Grant privileges to user_0d_1
-echo "Granting privileges to user_0d_1..."
-echo "GRANT ALL PRIVILEGES ON *.* TO 'user_0d_1'@'localhost';" | mysql -hlocalhost -uroot -p
+-- Create user user_0d_2 and grant privileges
+CREATE USER 'user_0d_2'@'localhost';
+GRANT ALL PRIVILEGES ON *.* TO 'user_0d_2'@'localhost';
 
-# Create user user_0d_2
-echo "Creating user user_0d_2..."
-echo "CREATE USER 'user_0d_2'@'localhost';" | mysql -hlocalhost -uroot -p
+-- List privileges for user_0d_1
+SHOW GRANTS FOR 'user_0d_1'@'localhost';
 
-# Grant privileges to user_0d_2
-echo "Granting privileges to user_0d_2..."
-echo "GRANT ALL PRIVILEGES ON *.* TO 'user_0d_2'@'localhost';" | mysql -hlocalhost -uroot -p
-
-# List privileges for user_0d_1
-echo "Listing privileges for user_0d_1..."
-echo "SHOW GRANTS FOR 'user_0d_1'@'localhost';" | mysql -hlocalhost -uroot -p
-
-# List privileges for user_0d_2
-echo "Listing privileges for user_0d_2..."
-echo "SHOW GRANTS FOR 'user_0d_2'@'localhost';" | mysql -hlocalhost -uroot -p
+-- List privileges for user_0d_2
+SHOW GRANTS FOR 'user_0d_2'@'localhost';
