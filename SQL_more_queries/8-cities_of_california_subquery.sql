@@ -14,5 +14,5 @@ IF @city_count > 0 THEN
     WHERE state_id = @california_id
     ORDER BY id;
 ELSE
-    SELECT 'No city in California';
+    SELECT 'No city in California' AS result;
 END IF;
