@@ -1,5 +1,4 @@
--- Use the hbtn_0d_usa database
-USE hbtn_0d_usa;
+USE hbtn_test_db_8;
 
 -- Select the id of the state with name 'California'
 SET @california_id = (SELECT id FROM states WHERE name = 'California');
