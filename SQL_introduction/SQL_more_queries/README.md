@@ -53,10 +53,6 @@ Dive into window functions to perform calculations across a set of table rows re
 
 Contributions to this repository are welcome! If you have more advanced SQL queries to share or want to improve existing examples, feel free to open an issue or pull request.
 
-## License
 
-This project is licensed under the [MIT License](LICENSE). Feel free to use the code and examples provided here in your own projects.
-
----
 
 Happy querying! 🎉
