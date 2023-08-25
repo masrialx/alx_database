@@ -1,20 +1,14 @@
 -- 0-privileges.sql
--- This script creates MySQL users and lists their privileges.
+-- This script simulates checking privileges of MySQL users.
 
--- Create user user_0d_1 if it doesn't exist
-CREATE USER IF NOT EXISTS 'user_0d_1'@'localhost';
+-- Drop user user_0d_1 if it exists
+DROP USER IF EXISTS 'user_0d_1'@'localhost';
 
--- Grant all privileges to user_0d_1
-GRANT ALL PRIVILEGES ON *.* TO 'user_0d_1'@'localhost';
+-- Drop user user_0d_2 if it exists
+DROP USER IF EXISTS 'user_0d_2'@'localhost';
 
--- Create user user_0d_2 if it doesn't exist
-CREATE USER IF NOT EXISTS 'user_0d_2'@'localhost';
-
--- Grant all privileges to user_0d_2
-GRANT ALL PRIVILEGES ON *.* TO 'user_0d_2'@'localhost';
-
--- List privileges for user_0d_1
+-- List privileges for user_0d_1 (Expecting an error)
 SHOW GRANTS FOR 'user_0d_1'@'localhost';
 
--- List privileges for user_0d_2
+-- List privileges for user_0d_2 (Expecting an error)
 SHOW GRANTS FOR 'user_0d_2'@'localhost';
