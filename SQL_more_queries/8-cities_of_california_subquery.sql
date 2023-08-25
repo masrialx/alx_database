@@ -1,8 +1,21 @@
--- Use the hbtn_0d_usa database
 USE hbtn_0d_usa;
 
--- Select cities of California without using JOIN
-SELECT id, name
+-- List cities in California
+SELECT cities.id, cities.name
 FROM cities
-WHERE state_id = (SELECT id FROM states WHERE name = 'California')
-ORDER BY id ASC;
+WHERE cities.state_id = (
+    SELECT states.id
+    FROM states
+    WHERE states.name = 'California'
+)
+ORDER BY cities.id;
+
+-- List cities in a non-existent state (empty listing)
+SELECT cities.id, cities.name
+FROM cities
+WHERE cities.state_id = (
+    SELECT states.id
+    FROM states
+    WHERE states.name = 'NonExistentState'
+)
+ORDER BY cities.id;
